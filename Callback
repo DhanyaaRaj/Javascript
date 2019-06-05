@@ -1,0 +1,43 @@
+//Both functions will be executed at same time
+/*let num= function()
+{
+console.log("first function")
+}
+let b=function(number)
+{
+  console.log("second function")
+   //number()
+
+}
+num(b)
+b(num)
+num()
+b()*/
+
+
+/*let num= function(numb)
+{
+console.log("first function")
+ //numb() //dis will create an error
+}
+let b=function(number)
+{
+  console.log("second function")
+   number()
+
+}
+b(num)*/
+
+/*let num= function(numb)
+{
+console.log("first function")
+ numb()
+}
+let b=function(number)
+{
+  console.log("second function")
+   //number()
+
+}
+num(b)*/
+
