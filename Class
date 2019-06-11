@@ -1,0 +1,262 @@
+//CLASS
+
+//without parameter
+function person()
+{
+this.firstname="unknown";
+this.lastname="unknown";
+}
+var per1 =new person()
+per1.firstname ="kavitha"
+per1.lastname="Nagarajan"
+console.log (per1.firstname +" "+per1.lastname)
+
+//with parameter
+function Animal(name,color)
+{
+this.name =name;
+this.color =color;
+}
+var ani =new Animal('puppy','white')
+console.log(ani)
+
+//METHOD
+
+//without parameter
+function methodperson()
+{
+    this.firstname="unknown"
+    this.lastname="unknown"
+    this.getfullname = function()
+    {
+        return this.firstname+ " "+this.lastname
+    }
+}
+var mper = new methodperson()
+mper.firstname="Akshaya"
+mper.lastname="Mathi"
+console.log(mper.getfullname())
+
+//With Parameter
+function methodanimal(character,behaviour)
+{
+    this.character=character
+    this.behaviour=behaviour
+    this.getfullname = function()
+    {
+        return this.character+ " "+this.behaviour
+    }
+}
+var mani= new methodanimal('kind','bark')
+console.log(mani.getfullname(mani))
+
+//CONSTRUCTOR
+
+function consanimal(name,behaviour)
+{
+    this.name=name
+    this.behaviour=behaviour
+    this.color="white"
+    this.getfullname = function()
+    {
+        return this.name+ " "+this.behaviour+" "+this.color
+    }
+}
+var cani= new consanimal('fluffy','bark','black')
+console.log(cani.getfullname(cani))
+
+//2 CONSTRUCTOR
+function consanimal(name,behaviour)
+{
+    this.name=name
+    this.behaviour=behaviour
+    this.color="white"
+    this.getfullname = function()
+    {
+        return this.name+ " "+this.behaviour+" "+this.color
+    }
+    this.pet=function()
+    {
+        return this.name+ " "+this.behaviour+" "+this.color
+    }
+}
+var cani= new consanimal('fluffy','bark','black')
+var ani1=new consanimal('kitten','soft','grey')
+console.log(cani.getfullname(cani))
+console.log(ani1.getfullname(ani1))
+
+//3 CONSTRUCTOR
+
+function consanimal(name,behaviour,color)
+{
+    this.name=name
+    this.behaviour=behaviour
+    this.color="white"
+    this.getfullname = function()
+    {
+        return this.name+ " "+this.behaviour+" "+this.color
+    }
+    this.pet=function()
+    {
+        return this.name+ " "+this.behaviour+" "+this.color
+    }
+    this.wild=function()
+    {
+        return this.name+ " "+this.behaviour+" "+this.color
+    }
+
+}
+var cani= new consanimal('fluffy','bark','black')
+var ani1=new consanimal('kitten','soft','grey')
+var ani2=new consanimal('tiger','wild')
+console.log(cani.getfullname(cani))
+console.log(ani1.pet(ani1))
+console.log(ani2.wild(ani2))
+
+//PROPERTY WITH GETTER 
+function gsperson()
+{
+    Object.defineProperties(this,{
+        "Firstname": 
+        {
+            get : function()
+            {
+                return firstname;
+            }
+            
+        }
+    });
+};
+var get = new gsperson()
+get.firstname = "Steve"
+console.log(get.firstname)
+
+//GETTER METHOD 2 - With Var
+function gs2person()
+{
+    var name = "unknown";
+    Object.defineProperties(this,{
+        "Firstname": 
+        {
+            get : function()
+            {
+                return firstname;
+            }
+            
+        }
+    });
+};
+var get = new gs2person()
+get.firstname = "ABCDE"
+console.log(get.firstname)
+
+//GETTER METHOD 3
+function gs3person()
+{
+    var name = "firstname";
+    Object.defineProperties(this,{
+        "Firstname": 
+        {
+            get : function()
+            {
+                return firstname;
+            }
+            
+        }
+    });
+};
+var get = new gs3person()
+get.firstname = "12345"
+console.log(get.firstname)
+
+//SETTER
+function gsperson()
+{
+    Object.defineProperties(this,{
+        "Firstname": 
+        {
+            set :function(value)
+            {
+                firstname= value ;
+            }
+        }
+    });
+};
+var get = new gsperson()
+get.firstname= "BIllGATES"
+console.log(get.firstname)
+
+//PROPERTY WITH GETTER & SETTER
+function gsperson()
+{
+    Object.defineProperties(this,{
+        "Firstname": 
+        {
+            get : function()
+            {
+                return firstname
+            },
+            set :function(value)
+            {
+                firstname= value ;
+            }
+        }
+    });
+};
+var get = new gsperson()
+get.firstname= "Getter and Setter"
+console.log(get.firstname)
+
+//READ ONLY PROPERTY
+function gsperson()
+{
+    Object.defineProperties(this,{
+        "Firstname": 
+        {
+            get : function()
+            {
+                return firstname;
+            }
+            
+        }
+    });
+};
+var get = new gsperson("STEVE")
+//get.firstname = "Steve"
+console.log(get.firstname)
+
+//MULTIPLE PROPERTY
+function mulproperty()
+{
+    Object.defineProperties(this,
+        {
+           "Animal":
+           {
+            get : function()
+            {
+                return petname
+            },
+            set : function(value)
+            {
+                 petname = value
+            }
+           },
+           "Wild" :
+           {
+            get : function()
+            {
+                return wild
+            },
+            set : function(value)
+            {
+                 wild = valuel
+            }
+           }
+        })
+}
+ var muprop = new mulproperty()
+ muprop.Animal = "Dog";
+ muprop.wild = "Lion";
+ console.log(muprop.Animal,muprop.wild );
+
+ 
