@@ -1,0 +1,47 @@
+//WITHOUT PROTOTYPE
+function withoutprop()
+{
+    this. name = 'BBBB'
+    this.job = 'Trainee'
+}
+var wprop =new withoutprop()
+wprop.age= 20
+console.log(wprop.age)
+
+var wprop1 =new withoutprop()
+console.log(wprop1.age)
+
+
+//PROTOTYPE
+function prop()
+{
+    this. name = 'AAAA'
+    this.job = 'Trainee'
+}
+prop.prototype.office = 'Softcrylic'
+var proto = new prop()
+console.log(proto.office)
+
+var proto1 = new prop()
+console.log(proto1.office)
+
+//PROTYPE AT LAST
+function prop1()
+{
+    this. name = 'AAAA'
+    this.job = 'Trainee'
+}
+var proto = new prop1()
+console.log(proto.office)
+prop.prototype.office = 'Softcrylic'
+
+// EXISTED PROTYPE
+function prop2()
+{
+    this. name = 'AAAA'
+    this.job = 'Trainee'
+    this.office = 'softcrylic'
+}
+prop.prototype.name = 'XYZ'
+var proto = new prop2()
+console.log(proto.name)
